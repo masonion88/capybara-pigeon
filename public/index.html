@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Capybara Pigeon</title>
+  <meta name="theme-color" content="#F9F7F1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body data-tab="explore">
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="i-capy" viewBox="0 0 44 44">
+      <ellipse class="capy-ear" cx="10" cy="11" rx="3.8" ry="3.4" fill="#6f4520" />
+      <ellipse class="capy-ear" cx="34" cy="11" rx="3.8" ry="3.4" fill="#6f4520" />
+      <ellipse cx="22" cy="24" rx="17" ry="15" fill="#8b5a2b" />
+      <rect x="9.5" y="23" width="25" height="15" rx="7.5" fill="#a87447" />
+      <g class="capy-eye"><circle cx="15" cy="20" r="2.3" fill="#3d3a36" /><circle cx="15.8" cy="19.2" r="0.8" fill="#fff" /></g>
+      <g class="capy-eye"><circle cx="29" cy="20" r="2.3" fill="#3d3a36" /><circle cx="29.8" cy="19.2" r="0.8" fill="#fff" /></g>
+      <ellipse cx="18.5" cy="29.5" rx="1.4" ry="2" fill="#4a2f17" />
+      <ellipse cx="25.5" cy="29.5" rx="1.4" ry="2" fill="#4a2f17" />
+      <circle cx="9.5" cy="26" r="2.6" fill="#f4a6a0" opacity="0.6" />
+      <circle cx="34.5" cy="26" r="2.6" fill="#f4a6a0" opacity="0.6" />
+    </symbol>
+    <!-- Happy capybara: smiling eyes and a yuzu on its head -->
+    <symbol id="i-capy-happy" viewBox="0 0 44 44">
+      <ellipse cx="10" cy="13" rx="3.8" ry="3.4" fill="#6f4520" />
+      <ellipse cx="34" cy="13" rx="3.8" ry="3.4" fill="#6f4520" />
+      <ellipse cx="22" cy="26" rx="17" ry="15" fill="#8b5a2b" />
+      <rect x="9.5" y="25" width="25" height="15" rx="7.5" fill="#a87447" />
+      <path d="M12.6 22.6q2.4-3 4.8 0M26.6 22.6q2.4-3 4.8 0" fill="none" stroke="#3d3a36" stroke-width="1.7" stroke-linecap="round" />
+      <ellipse cx="18.5" cy="31.5" rx="1.4" ry="2" fill="#4a2f17" />
+      <ellipse cx="25.5" cy="31.5" rx="1.4" ry="2" fill="#4a2f17" />
+      <path d="M19.4 35.6q2.6 1.8 5.2 0" fill="none" stroke="#4a2f17" stroke-width="1.3" stroke-linecap="round" />
+      <circle cx="9.5" cy="28" r="3" fill="#f4a6a0" opacity="0.75" />
+      <circle cx="34.5" cy="28" r="3" fill="#f4a6a0" opacity="0.75" />
+      <circle cx="22" cy="7.6" r="4.6" fill="#f2b544" />
+      <circle cx="20.4" cy="6.2" r="1.2" fill="#fff" opacity="0.55" />
+      <path d="M22 3.2q2.8-2.6 5-0.6q-2.2 2.2-5 0.6z" fill="#7a9f81" />
+    </symbol>
+    <symbol id="i-pigeon" viewBox="0 0 32 32">
+      <path d="M4.5 18.5L0.5 22.5h5z" fill="#6f857b" />
+      <ellipse cx="14" cy="19" rx="10" ry="7.5" fill="#8da399" />
+      <path d="M7.5 16.5q6-3.5 12.5.5q-5 6.5-12.5 3z" fill="#6f857b" />
+      <circle cx="23" cy="11" r="5.6" fill="#8da399" />
+      <path d="M19 13.5q3 4 6.4 2q-1 3.2-4.4 4.2q-3.2-2.2-2-6.2z" fill="#7fb3a0" opacity="0.85" />
+      <path d="M28.3 10.4l3.2 1.1-3.2 1.2z" fill="#f2b544" />
+      <circle cx="24.6" cy="10" r="1.3" fill="#3d3a36" />
+      <circle cx="25" cy="9.6" r="0.45" fill="#fff" />
+      <path d="M12.5 26v3M16.5 26v3" stroke="#e07a5f" stroke-width="1.7" stroke-linecap="round" />
+    </symbol>
+    <symbol id="i-explore" viewBox="0 0 24 24">
+      <path d="M3.5 7l5.5-2.5 6 2.5 5.5-2.5v12.5L15 19.5 9 17l-5.5 2.5z M9 4.5V17 M15 7v12.5" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24">
+      <path d="M10 3.5l1.8 4.7 4.7 1.8-4.7 1.8L10 16.5l-1.8-4.7L3.5 10l4.7-1.8z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+      <path d="M18 14.5l0.9 2.1 2.1 0.9-2.1 0.9-0.9 2.1-0.9-2.1-2.1-0.9 2.1-0.9z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="i-tonight" viewBox="0 0 24 24">
+      <path d="M19.5 14.8A8 8 0 1 1 9.2 4.5a6.4 6.4 0 0 0 10.3 10.3z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M17 3.5l0.7 1.8 1.8 0.7-1.8 0.7-0.7 1.8-0.7-1.8-1.8-0.7 1.8-0.7z" fill="currentColor" />
+    </symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24">
+      <path d="M12 12.6c-2.9 0-5 2.2-5 4.3 0 1.6 1.2 2.5 2.7 2.5 1 0 1.5-0.5 2.3-0.5s1.3 0.5 2.3 0.5c1.5 0 2.7-0.9 2.7-2.5 0-2.1-2.1-4.3-5-4.3z" fill="currentColor" />
+      <circle cx="6.3" cy="10.6" r="1.9" fill="currentColor" /><circle cx="9.7" cy="6.8" r="2" fill="currentColor" />
+      <circle cx="14.3" cy="6.8" r="2" fill="currentColor" /><circle cx="17.7" cy="10.6" r="1.9" fill="currentColor" />
+    </symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24">
+      <path d="M8 5v14M8 5L4.5 8.5M8 5l3.5 3.5M16 19V5M16 19l-3.5-3.5M16 19l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+    </symbol>
+    <symbol id="i-locate" viewBox="0 0 24 24">
+      <path d="M12 3.5l6.5 16-6.5-3.6-6.5 3.6z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path d="M8 5.5v13a1 1 0 0 0 1.5 0.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor" />
+    </symbol>
+  </svg>
+
+  <div id="map" aria-label="Map of O-Week events around Cornell"></div>
+
+  <!-- ===== Top bar ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <svg class="mascot" aria-hidden="true"><use href="#i-capy" /></svg>
+      <span class="brand-name">Capybara <b>Pigeon</b></span>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="alertsBtn" aria-label="Nearby alerts" aria-haspopup="dialog" aria-expanded="false" aria-controls="alertsPop">
+        <svg aria-hidden="true"><use href="#i-pigeon" /></svg>
+      </button>
+      <div class="wallet" id="wallet" aria-label="Wallet balance">
+        <span class="wallet-label"><i class="wallet-dot" id="balanceDot"></i>Wallet</span>
+        <span class="wallet-amount" id="balance">$—</span>
+      </div>
+      <button class="demo-btn" id="judgeDemo" aria-label="Run the guided demo">
+        <svg aria-hidden="true"><use href="#i-play" /></svg><span class="demo-text">Demo</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Nearby alerts (pigeon texts) -->
+  <div class="popover" id="alertsPop" role="dialog" aria-label="Nearby alerts" hidden>
+    <div class="popover-head">
+      <svg class="popover-pigeon" aria-hidden="true"><use href="#i-pigeon" /></svg>
+      <div>
+        <strong>Nearby alerts</strong>
+        <p>Your pigeon texts you when something fun is about to start close by. Reply YES and it's added to tonight.</p>
+      </div>
+    </div>
+    <label class="switch-row">
+      <span class="switch-text">
+        <b>Text me automatically</b>
+        <small id="alertsWhere">Using a spot by Willard Straight</small>
+      </span>
+      <input type="checkbox" class="switch" id="alertsToggle" role="switch" />
+    </label>
+    <div class="field">
+      <span class="field-label" id="alertKindsLabel">Text me about…</span>
+      <div class="picks picks-sm" id="alertKinds" role="group" aria-labelledby="alertKindsLabel">
+        <button class="pick" type="button" data-value="A Cappella" aria-pressed="true">🎤 A cappella</button>
+        <button class="pick" type="button" data-value="Music" aria-pressed="true">🎶 Music</button>
+        <button class="pick" type="button" data-value="Food" aria-pressed="true">🍕 Food</button>
+        <button class="pick" type="button" data-value="Party" aria-pressed="true">🎉 Party</button>
+        <button class="pick" type="button" data-value="Social" aria-pressed="true">🎲 Social</button>
+        <button class="pick" type="button" data-value="Outdoors" aria-pressed="true">🌿 Outdoors</button>
+        <button class="pick" type="button" data-value="Film" aria-pressed="true">🎬 Film</button>
+        <button class="pick" type="button" data-value="Arts" aria-pressed="true">🎨 Arts</button>
+        <button class="pick" type="button" data-value="Tech" aria-pressed="true">💻 Tech</button>
+      </div>
+    </div>
+    <div class="field">
+      <span class="field-label" id="alertStyleLabel">How should texts sound?</span>
+      <div class="picks picks-sm" id="alertStyle" role="group" aria-labelledby="alertStyleLabel">
+        <button class="pick" type="button" data-value="extra short" aria-pressed="false">✂️ Short</button>
+        <button class="pick" type="button" data-value="funny, with a pun" aria-pressed="false">😂 Funny</button>
+        <button class="pick" type="button" data-value="extra pigeon-y, with coos and bird puns" aria-pressed="false">🐦 Extra coo</button>
+        <button class="pick" type="button" data-value="Gen Z slang" aria-pressed="false">🧢 Gen Z</button>
+        <button class="pick" type="button" data-value="fancy and posh, like a butler" aria-pressed="false">🎩 Fancy</button>
+        <button class="pick" type="button" data-value="no emoji" aria-pressed="false">🚫 No emoji</button>
+      </div>
+      <input type="text" id="alertStyleExtra" maxlength="120" placeholder="Anything else? (pirate, en español…)" aria-label="Other ways the pigeon should write, separated by commas" />
+    </div>
+    <button class="btn btn-pigeon btn-sm" id="pitstop">Send me one now</button>
+    <div class="number-row">
+      <small class="via" id="alertsVia">Picked by Gemini · texted via Photon iMessage</small>
+      <button class="btn btn-ghost btn-xs" id="numberChange" type="button">Use my number</button>
+    </div>
+    <form class="number-form" id="numberForm" hidden>
+      <input type="text" inputmode="tel" autocomplete="tel" id="numberInput" placeholder="Your mobile number" aria-label="Your mobile number" />
+      <button class="btn btn-pigeon btn-sm" type="submit">Next</button>
+    </form>
+    <div class="number-join" id="joinStep" hidden>
+      <a class="btn btn-matcha btn-sm" id="joinLink" target="_blank" rel="noopener">Open Messages and send</a>
+    </div>
+    <small class="number-hint" id="numberHint" hidden></small>
+  </div>
+
+  <!-- Find me: tap to center on you, again to turn the map the way you face, again to stop -->
+  <button class="locate" id="locate" data-mode="off" aria-label="Center the map on me"><svg aria-hidden="true"><use href="#i-locate" /></svg></button>
+
+  <div class="pick-hint" id="pickHint" hidden>
+    <span id="pickHintText">Tap the map to set your destination</span>
+    <button class="btn btn-white btn-xs" id="pickCancel">Cancel</button>
+  </div>
+
+  <div class="demo-caption" id="demoCaption" hidden>
+    <div class="dc-top">
+      <span class="dc-step" id="demoStep">1 / 6</span>
+      <span class="dc-title" id="demoTitle"></span>
+      <button class="btn btn-white btn-xs" id="demoNext">Next</button>
+      <button class="x-btn" id="demoStop" aria-label="Stop demo"><svg aria-hidden="true"><use href="#i-close" /></svg></button>
+    </div>
+    <div class="dc-sub" id="demoSub"></div>
+    <div class="dc-progress"><span id="demoBar"></span></div>
+  </div>
+
+  <!-- First-visit hello -->
+  <div class="coach" id="coach" hidden>
+    <svg class="coach-capy" aria-hidden="true"><use href="#i-capy" /></svg>
+    <div class="bubble">
+      <strong>Hi! Here's tonight around campus.</strong>
+      <p>Slide the time to see what's on, then tap a little blob to peek inside.</p>
+      <button class="btn btn-matcha btn-xs" id="coachClose">Got it</button>
+    </div>
+  </div>
+
+  <!-- ===== Dock over the bottom of the map: event spotlight + time of night ===== -->
+  <div class="dock" id="dock">
+  <article class="eventcard" id="eventCard" aria-live="polite" hidden></article>
+  <section class="timebar" id="timebar" aria-label="Time of night">
+    <button class="play" id="play" aria-label="Play through the night">
+      <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" /></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.5" /><rect x="14" y="5" width="4" height="14" rx="1.5" /></svg>
+    </button>
+    <div class="clock">
+      <div class="clock-time" id="readout">7:30 PM</div>
+      <div class="clock-sub"><span id="liveCount">0</span> things happening</div>
+    </div>
+    <div class="scrub-col">
+      <div class="scrub" id="scrub">
+        <div class="density" id="density" aria-hidden="true"></div>
+        <div class="track" aria-hidden="true"><div class="track-fill" id="trackFill"></div></div>
+        <div class="playhead" id="playhead" aria-hidden="true"><svg><use href="#i-pigeon" /></svg></div>
+        <input type="range" id="slider" min="0" max="570" step="5" value="150" aria-label="Time of night" />
+      </div>
+      <div class="ticks" aria-hidden="true">
+        <span style="left: 0%">5 PM</span><span style="left: 31.58%">8 PM</span><span style="left: 63.16%">11 PM</span><span style="left: 94.74%">2 AM</span>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- ===== Plan: let the capybara plan a night ===== -->
+  <section class="panel" id="planPanel" data-panel="plan" aria-label="Plan my night">
+    <button class="sheet-handle" aria-label="Expand or collapse this panel"></button>
+    <div class="panel-scroll">
+      <div class="plan-hero" id="planHero">
+        <div class="say">
+          <div class="say-mascots" aria-hidden="true">
+            <svg class="say-capy"><use href="#i-capy" /></svg>
+            <svg class="say-pigeon"><use href="#i-pigeon" /></svg>
+          </div>
+          <div class="bubble">
+            <h2>Plan my night</h2>
+            <p>Tell me what you're into. I'll pick 3 stops you can walk between, all within your wallet.</p>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label" id="interestsLabel">I'm in the mood for…</span>
+          <div class="picks" id="interestChips" role="group" aria-labelledby="interestsLabel">
+            <button class="pick" type="button" data-value="a cappella" aria-pressed="true">🎤 A cappella</button>
+            <button class="pick" type="button" data-value="games" aria-pressed="true">🎲 Games</button>
+            <button class="pick" type="button" data-value="boba" aria-pressed="true">🧋 Boba</button>
+            <button class="pick" type="button" data-value="food" aria-pressed="false">🍕 Food</button>
+            <button class="pick" type="button" data-value="music" aria-pressed="false">🎶 Music</button>
+            <button class="pick" type="button" data-value="film" aria-pressed="false">🎬 Film</button>
+            <button class="pick" type="button" data-value="outdoors" aria-pressed="false">🌿 Outdoors</button>
+            <button class="pick" type="button" data-value="party" aria-pressed="false">🎉 Party</button>
+            <button class="pick" type="button" data-value="tech" aria-pressed="false">💻 Tech</button>
+            <button class="pick" type="button" data-value="arts" aria-pressed="false">🎨 Arts</button>
+          </div>
+          <input type="text" id="interestExtra" placeholder="Anything else? (karaoke, tacos…)" aria-label="Other interests, separated by commas" />
+        </div>
+        <button class="btn btn-matcha btn-lg" id="curate"><span class="btn-label">Plan my night</span></button>
+        <p class="via">Picked by Gemini · budget is your wallet balance</p>
+      </div>
+      <div class="night" id="night" hidden></div>
+    </div>
+  </section>
+
+  <!-- ===== Tonight: your walk and your stops ===== -->
+  <section class="panel" id="tonightPanel" data-panel="tonight" aria-label="Tonight">
+    <button class="sheet-handle" aria-label="Expand or collapse this panel"></button>
+    <div class="panel-scroll">
+      <div class="panel-head">
+        <h2 class="panel-title">Tonight</h2>
+        <span class="panel-sub">Your walk and your stops</span>
+      </div>
+
+      <div class="trip-summary" id="tripSummary" hidden></div>
+
+      <div class="card trip-card">
+        <label class="trip-row">
+          <span class="field-dot from" aria-hidden="true"></span>
+          <span class="trip-label">From</span>
+          <select id="fromSelect"></select>
+        </label>
+        <label class="trip-row">
+          <span class="field-dot to" aria-hidden="true"></span>
+          <span class="trip-label">To</span>
+          <select id="toSelect"></select>
+        </label>
+        <button class="swap-btn" id="swap" aria-label="Swap start and destination"><svg aria-hidden="true"><use href="#i-swap" /></svg></button>
+      </div>
+
+      <div class="trip-body" id="tripBody"></div>
+
+      <details class="detours" id="detourBlock" hidden>
+        <summary>
+          <span class="detour-dots" id="detourDots" aria-hidden="true"></span>
+          <span class="detour-summary" id="detourSummary">Fun stops on your way</span>
+          <svg class="chev" aria-hidden="true"><use href="#i-chevron" /></svg>
+        </summary>
+        <div class="segmented" role="radiogroup" aria-label="How much to spend per stop">
+          <button class="seg" role="radio" data-budget="free" aria-checked="false">Free</button>
+          <button class="seg" role="radio" data-budget="ten" aria-checked="true">Under $10</button>
+          <button class="seg" role="radio" data-budget="max" aria-checked="false" id="budgetMax">Anything</button>
+        </div>
+        <div class="detour-list" id="detours" role="list"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== Bottom navigation ===== -->
+  <nav class="tabbar" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" data-tab="explore" aria-selected="true"><svg class="tab-icon" aria-hidden="true"><use href="#i-explore" /></svg><span>Explore</span></button>
+    <button class="tab" role="tab" data-tab="plan" aria-selected="false"><svg class="tab-icon" aria-hidden="true"><use href="#i-plan" /></svg><span>Plan</span></button>
+    <button class="tab" role="tab" data-tab="tonight" aria-selected="false"><svg class="tab-icon" aria-hidden="true"><use href="#i-tonight" /></svg><span>Tonight</span><span class="tab-badge" id="tonightBadge" hidden></span></button>
+  </nav>
+
+  <!-- ===== Pigeon alert (Photon iMessage) ===== -->
+  <div class="imessage" id="imessage" role="status" aria-live="polite" hidden>
+    <div class="im-head">
+      <svg class="im-app" aria-hidden="true"><use href="#i-pigeon" /></svg>
+      <div class="im-meta">
+        <strong>Pigeon alert</strong>
+        <span id="imMeta">now</span>
+      </div>
+      <button class="x-btn" id="imClose" aria-label="Dismiss"><svg aria-hidden="true"><use href="#i-close" /></svg></button>
+    </div>
+    <div class="im-thread" id="imThread"></div>
+    <div class="im-foot">
+      <span class="chip" id="imAgent"></span>
+      <span class="chip" id="imDelivery"></span>
+      <button class="btn btn-matcha btn-xs" id="imAdd" hidden>Add to tonight</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

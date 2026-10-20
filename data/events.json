@@ -1,0 +1,542 @@
+[
+  {
+    "id": "evt_001",
+    "title": "First Night Cornell: Glow Silent Disco",
+    "description": "Three DJ channels, a thousand glowing headphones, and the whole Class of 2030 dancing on the Barton Hall floor.",
+    "category": "Party",
+    "coordinates": [
+      -76.4802,
+      42.4463
+    ],
+    "venue": "Barton Hall",
+    "startTime": "2026-10-03T21:00:00-04:00",
+    "endTime": "2026-10-04T01:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_002",
+    "title": "A Cappella Arch Sing",
+    "description": "Cornell's a cappella groups trade sets under the arch. Bring a friend, sit on the grass, and find your new favorite group.",
+    "category": "A Cappella",
+    "coordinates": [
+      -76.4855,
+      42.4488
+    ],
+    "venue": "Balch Arch / Arts Quad",
+    "startTime": "2026-10-03T19:30:00-04:00",
+    "endTime": "2026-10-03T21:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": true
+  },
+  {
+    "id": "evt_003",
+    "title": "Big Red Welcome Fest & Food Truck Rally",
+    "description": "A dozen Ithaca food trucks, lawn games, and free Big Red swag for the first 300 through the gate.",
+    "category": "Food",
+    "coordinates": [
+      -76.476,
+      42.456
+    ],
+    "venue": "Appel Commons Fields",
+    "startTime": "2026-10-03T17:30:00-04:00",
+    "endTime": "2026-10-03T20:30:00-04:00",
+    "price": 10,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_004",
+    "title": "Libe Slope Sunset Acoustic Jam",
+    "description": "Student songwriters play acoustic sets as the sun drops over Cayuga Lake. Blankets encouraged.",
+    "category": "Music",
+    "coordinates": [
+      -76.487,
+      42.4478
+    ],
+    "venue": "Top of Libe Slope",
+    "startTime": "2026-10-03T18:30:00-04:00",
+    "endTime": "2026-10-03T20:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_005",
+    "title": "Club Fest Early Access & Swag Scramble",
+    "description": "Get a first look at 500+ student orgs before the crowds, and grab stickers, tees, and tote bags while they last.",
+    "category": "Social",
+    "coordinates": [
+      -76.4808,
+      42.4457
+    ],
+    "venue": "Barton Hall",
+    "startTime": "2026-10-03T18:00:00-04:00",
+    "endTime": "2026-10-03T21:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_006",
+    "title": "Collegetown Basement Showcase: Electric Buffalo Records",
+    "description": "Student label Electric Buffalo Records brings four local bands to a packed Dryden Rd basement.",
+    "category": "Music",
+    "coordinates": [
+      -76.4838,
+      42.4423
+    ],
+    "venue": "Dryden Rd",
+    "startTime": "2026-10-03T22:00:00-04:00",
+    "endTime": "2026-10-04T01:30:00-04:00",
+    "price": 8,
+    "sponsorBoost": true
+  },
+  {
+    "id": "evt_007",
+    "title": "Midnight Bear Necessities Calzone Rush",
+    "description": "North Campus's late-night calzone counter opens its doors. The line moves fast and the garlic knots go faster.",
+    "category": "Food",
+    "coordinates": [
+      -76.4793,
+      42.456
+    ],
+    "venue": "RPCC North Campus",
+    "startTime": "2026-10-03T23:30:00-04:00",
+    "endTime": "2026-10-04T02:00:00-04:00",
+    "price": 9,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_008",
+    "title": "West Campus Midnight Pancake Slam",
+    "description": "All-you-can-stack pancakes with a toppings bar, served by West Campus house professors.",
+    "category": "Food",
+    "coordinates": [
+      -76.4915,
+      42.4468
+    ],
+    "venue": "Hans Bethe Dining",
+    "startTime": "2026-10-03T23:00:00-04:00",
+    "endTime": "2026-10-04T01:30:00-04:00",
+    "price": 6,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_009",
+    "title": "Dairy Bar Ice Cream Crawl",
+    "description": "Sample flights of Cornell Dairy flavors made on campus, including a Big Red Bear Tracks exclusive.",
+    "category": "Food",
+    "coordinates": [
+      -76.471,
+      42.4475
+    ],
+    "venue": "Stocking Hall",
+    "startTime": "2026-10-03T17:00:00-04:00",
+    "endTime": "2026-10-03T19:30:00-04:00",
+    "price": 7,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_010",
+    "title": "Beebe Lake Twilight Campfire & S'mores",
+    "description": "Outdoor Odyssey leaders host a lakeside campfire with s'mores, stargazing, and ghost stories.",
+    "category": "Outdoors",
+    "coordinates": [
+      -76.4765,
+      42.451
+    ],
+    "venue": "Triti Pier / Beebe Lake",
+    "startTime": "2026-10-03T20:00:00-04:00",
+    "endTime": "2026-10-03T22:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_011",
+    "title": "Klarman Atrium Late Night Board Games & Boba",
+    "description": "Hundreds of board games under the glass atrium, with brown sugar boba on tap.",
+    "category": "Social",
+    "coordinates": [
+      -76.4836,
+      42.4492
+    ],
+    "venue": "Klarman Hall",
+    "startTime": "2026-10-03T20:30:00-04:00",
+    "endTime": "2026-10-03T23:30:00-04:00",
+    "price": 5,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_012",
+    "title": "Collegetown Block Party & DJ Stage",
+    "description": "Eddy St closes to traffic for a DJ stage, light rigs, and Collegetown food vendors until late.",
+    "category": "Party",
+    "coordinates": [
+      -76.4862,
+      42.441
+    ],
+    "venue": "Eddy St",
+    "startTime": "2026-10-03T21:30:00-04:00",
+    "endTime": "2026-10-04T01:45:00-04:00",
+    "price": 20,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_013",
+    "title": "VIP Big Red Welcome Concert",
+    "description": "A headline act plays historic Bailey Hall for the official welcome concert. Reserved seating, limited tickets.",
+    "category": "Music",
+    "coordinates": [
+      -76.4795,
+      42.4495
+    ],
+    "venue": "Bailey Hall",
+    "startTime": "2026-10-03T20:00:00-04:00",
+    "endTime": "2026-10-03T22:30:00-04:00",
+    "price": 25,
+    "sponsorBoost": true
+  },
+  {
+    "id": "evt_014",
+    "title": "Cornell Cinema Secret 35mm Screening",
+    "description": "The projectionists won't say what's on the reel until the lights go down. Real film, real popcorn.",
+    "category": "Film",
+    "coordinates": [
+      -76.4855,
+      42.4465
+    ],
+    "venue": "Willard Straight Hall",
+    "startTime": "2026-10-03T19:00:00-04:00",
+    "endTime": "2026-10-03T21:30:00-04:00",
+    "price": 9,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_015",
+    "title": "Duffield Hall All-Nighter Hack & Caffeine Lab",
+    "description": "Open hack space with mentors, cold brew, and snacks until 2 AM. Bring a laptop and an idea.",
+    "category": "Tech",
+    "coordinates": [
+      -76.4826,
+      42.4446
+    ],
+    "venue": "Duffield Hall",
+    "startTime": "2026-10-03T22:30:00-04:00",
+    "endTime": "2026-10-04T02:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_016",
+    "title": "Ho Plaza Food Truck Alley",
+    "description": "Ithaca favorites line Ho Plaza: Mexicali Grill, Silo Fried Chicken, and a waffle truck. Free to wander, pay as you eat.",
+    "category": "Food",
+    "coordinates": [
+      -76.4851,
+      42.4471
+    ],
+    "venue": "Ho Plaza",
+    "startTime": "2026-10-03T17:00:00-04:00",
+    "endTime": "2026-10-03T22:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": true
+  },
+  {
+    "id": "evt_017",
+    "title": "Greek Row Welcome BBQ",
+    "description": "Burgers, veggie dogs, and lawn games on Thurston Ave. Meet chapter members before rush starts.",
+    "category": "Social",
+    "coordinates": [
+      -76.4818,
+      42.4536
+    ],
+    "venue": "Thurston Ave",
+    "startTime": "2026-10-03T18:00:00-04:00",
+    "endTime": "2026-10-03T20:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_018",
+    "title": "Risley Theatre Midnight Rocky Horror",
+    "description": "The legendary Risley shadow cast performs Rocky Horror. Prop bags at the door.",
+    "category": "Film",
+    "coordinates": [
+      -76.4824,
+      42.4528
+    ],
+    "venue": "Risley Hall",
+    "startTime": "2026-10-03T23:30:00-04:00",
+    "endTime": "2026-10-04T01:30:00-04:00",
+    "price": 5,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_019",
+    "title": "Morrison Dining Late-Night Waffles",
+    "description": "Build-your-own waffle bar with fruit, Nutella, and Cornell Dairy whipped cream. Swipe in or pay at the door.",
+    "category": "Food",
+    "coordinates": [
+      -76.4776,
+      42.4562
+    ],
+    "venue": "Morrison Dining",
+    "startTime": "2026-10-03T22:00:00-04:00",
+    "endTime": "2026-10-04T01:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_020",
+    "title": "Botanic Gardens Firefly Walk",
+    "description": "A guided twilight stroll through the Cornell Botanic Gardens with a naturalist.",
+    "category": "Outdoors",
+    "coordinates": [
+      -76.4722,
+      42.4497
+    ],
+    "venue": "Cornell Botanic Gardens",
+    "startTime": "2026-10-03T18:30:00-04:00",
+    "endTime": "2026-10-03T20:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_021",
+    "title": "Ithaca Commons Night Market",
+    "description": "Local makers, crepes, and buskers line the pedestrian mall downtown.",
+    "category": "Food",
+    "coordinates": [
+      -76.4972,
+      42.4393
+    ],
+    "venue": "Ithaca Commons",
+    "startTime": "2026-10-03T17:30:00-04:00",
+    "endTime": "2026-10-03T22:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_022",
+    "title": "Jazz on the Commons",
+    "description": "Ithaca College and Cornell jazz combos trade sets at the Bernie Milton Pavilion.",
+    "category": "Music",
+    "coordinates": [
+      -76.4962,
+      42.4389
+    ],
+    "venue": "Bernie Milton Pavilion",
+    "startTime": "2026-10-03T19:00:00-04:00",
+    "endTime": "2026-10-03T23:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_023",
+    "title": "Collegetown Bagels Night Owl Special",
+    "description": "Half-price bagel sandwiches and cold brew for anyone with a student ID.",
+    "category": "Food",
+    "coordinates": [
+      -76.4857,
+      42.4416
+    ],
+    "venue": "Collegetown Bagels",
+    "startTime": "2026-10-03T21:00:00-04:00",
+    "endTime": "2026-10-04T02:30:00-04:00",
+    "price": 4,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_024",
+    "title": "Big Red Marching Band Pep Rally",
+    "description": "The Big Red Marching Band takes over Schoellkopf with the Alma Mater and fight songs.",
+    "category": "Music",
+    "coordinates": [
+      -76.4774,
+      42.4446
+    ],
+    "venue": "Schoellkopf Field",
+    "startTime": "2026-10-03T18:00:00-04:00",
+    "endTime": "2026-10-03T19:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_025",
+    "title": "Johnson Museum Rooftop Stargazing",
+    "description": "Telescopes on the fifth-floor terrace with views over Cayuga Lake.",
+    "category": "Outdoors",
+    "coordinates": [
+      -76.4864,
+      42.4506
+    ],
+    "venue": "Johnson Museum of Art",
+    "startTime": "2026-10-03T20:30:00-04:00",
+    "endTime": "2026-10-03T23:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_026",
+    "title": "Rose House Open Mic Night",
+    "description": "Poets, singer-songwriters, and comedians. Sign-up sheet opens at 7:45.",
+    "category": "Music",
+    "coordinates": [
+      -76.4904,
+      42.4474
+    ],
+    "venue": "Flora Rose House",
+    "startTime": "2026-10-03T20:00:00-04:00",
+    "endTime": "2026-10-03T23:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_027",
+    "title": "Becker House Karaoke Battle",
+    "description": "House vs. house karaoke on West Campus. The winner gets the golden mic.",
+    "category": "Social",
+    "coordinates": [
+      -76.4926,
+      42.4461
+    ],
+    "venue": "Carl Becker House",
+    "startTime": "2026-10-03T21:30:00-04:00",
+    "endTime": "2026-10-04T00:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_028",
+    "title": "Gates Hall Hackathon Kickoff",
+    "description": "Team formation, lightning talks, and free swag for the weekend hackathon.",
+    "category": "Tech",
+    "coordinates": [
+      -76.4812,
+      42.4451
+    ],
+    "venue": "Gates Hall",
+    "startTime": "2026-10-03T18:00:00-04:00",
+    "endTime": "2026-10-03T22:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_029",
+    "title": "Phillips Hall Robotics Showcase",
+    "description": "Project teams demo autonomous rovers, drones, and a ping-pong robot.",
+    "category": "Tech",
+    "coordinates": [
+      -76.482,
+      42.444
+    ],
+    "venue": "Phillips Hall",
+    "startTime": "2026-10-03T19:00:00-04:00",
+    "endTime": "2026-10-03T21:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_030",
+    "title": "Slope Day Throwback Glow Party",
+    "description": "A Slope Day-themed glow party on a Collegetown rooftop. 18+, wristbands at the door.",
+    "category": "Party",
+    "coordinates": [
+      -76.4846,
+      42.4424
+    ],
+    "venue": "College Ave Rooftop",
+    "startTime": "2026-10-03T22:30:00-04:00",
+    "endTime": "2026-10-04T02:30:00-04:00",
+    "price": 15,
+    "sponsorBoost": true
+  },
+  {
+    "id": "evt_031",
+    "title": "Greek Row Neon Mixer",
+    "description": "Neon paint, DJ sets, and a light tunnel on Ridgewood Rd. Wristband required.",
+    "category": "Party",
+    "coordinates": [
+      -76.4878,
+      42.4534
+    ],
+    "venue": "Ridgewood Rd",
+    "startTime": "2026-10-03T21:00:00-04:00",
+    "endTime": "2026-10-04T01:00:00-04:00",
+    "price": 18,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_032",
+    "title": "Appel Late-Night Ramen Bar",
+    "description": "Tonkotsu and veggie miso bowls at the Appel Commons counter.",
+    "category": "Food",
+    "coordinates": [
+      -76.4764,
+      42.4553
+    ],
+    "venue": "Appel Commons",
+    "startTime": "2026-10-03T22:30:00-04:00",
+    "endTime": "2026-10-04T01:30:00-04:00",
+    "price": 6,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_033",
+    "title": "Fall Creek Gorge Night Hike",
+    "description": "Outdoor Odyssey leads a headlamp hike from the suspension bridge along the gorge rim.",
+    "category": "Outdoors",
+    "coordinates": [
+      -76.4787,
+      42.4525
+    ],
+    "venue": "Fall Creek Suspension Bridge",
+    "startTime": "2026-10-03T19:30:00-04:00",
+    "endTime": "2026-10-03T21:00:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_034",
+    "title": "Willard Straight Late-Night Trivia",
+    "description": "Cornell history, pop culture, and Ithaca lore trivia in the Memorial Room.",
+    "category": "Social",
+    "coordinates": [
+      -76.4858,
+      42.4462
+    ],
+    "venue": "Willard Straight Hall",
+    "startTime": "2026-10-03T21:30:00-04:00",
+    "endTime": "2026-10-03T23:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_035",
+    "title": "Goldwin Smith Poetry Slam",
+    "description": "Open slam on the Goldwin Smith steps. Judges are picked from the crowd.",
+    "category": "Arts",
+    "coordinates": [
+      -76.4846,
+      42.4483
+    ],
+    "venue": "Goldwin Smith Hall",
+    "startTime": "2026-10-03T20:00:00-04:00",
+    "endTime": "2026-10-03T21:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  },
+  {
+    "id": "evt_036",
+    "title": "Duffield Atrium 2 AM Pizza Drop",
+    "description": "Fresh pizza for everyone still building at the Duffield all-nighter.",
+    "category": "Food",
+    "coordinates": [
+      -76.483,
+      42.4449
+    ],
+    "venue": "Duffield Hall",
+    "startTime": "2026-10-04T00:00:00-04:00",
+    "endTime": "2026-10-04T02:30:00-04:00",
+    "price": 0,
+    "sponsorBoost": false
+  }
+]

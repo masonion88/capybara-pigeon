@@ -1,0 +1,21 @@
+{
+  "name": "capybara-pigeon",
+  "version": "0.1.0",
+  "description": "Capybara Pigeon: a cozy, social campus map that plans your night across space and time",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "mobile": "npm --prefix mobile start",
+    "seed:nessie": "node scripts/seedNessie.js",
+    "reset:nessie": "node scripts/resetNessie.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.27.0",
+    "axios": "^1.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.21.0",
+    "spectrum-ts": "^12.10.1"
+  }
+}
